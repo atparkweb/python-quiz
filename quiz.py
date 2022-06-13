@@ -1,6 +1,7 @@
 import random
 from string import ascii_lowercase
 
+
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS = {
     "When was the first known use of the word 'quiz'": [
@@ -23,30 +24,49 @@ QUESTIONS = {
     ]
 }
 
-num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS))
-questions = random.sample(list(QUESTIONS.items()), k=num_questions)
 
-num_correct = 0
+def prepare_questions(questions: list, num_questions: int):
+    num_questions = min(num_questions, len(questions))
+    return random.sample(list(questions.items()), k=num_questions)
 
-for num, (question, alternatives) in enumerate(questions, start=1):
-    print(f"\nQuestion {num}:")
+
+def get_answer(question: str, alternatives: list):
     print(f"{question}?")
-
-    correct_answer = alternatives[0]
-    labeled_alternatives = dict(
-        zip(ascii_lowercase, random.sample(alternatives, k=len(alternatives)))
-    )
+    labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 
     while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
-        print(f"Please answer one of {', '.join(labeled_alternatives)}")
+        print(f"Please enter one of {', '.join(labeled_alternatives)}")
 
-    answer = labeled_alternatives[answer_label]
+    return labeled_alternatives[answer_label]
+
+
+def ask_question(question, alternatives):
+    correct_answer = alternatives[0]
+    ordered_alternatives = random.sample(alternatives, k=len(alternatives))
+
+    answer = get_answer(question, ordered_alternatives)
     if answer == correct_answer:
-        num_correct += 1
         print("⭐ Correct! ⭐")
+        return 1
     else:
         print(f"The answer is {correct_answer!r}, not {answer!r}")
+        return 0
 
-print(f"You got {num_correct}/{len(QUESTIONS)}")
+
+def run_quiz():
+    questions = prepare_questions(
+        QUESTIONS, num_questions=NUM_QUESTIONS_PER_QUIZ
+    )
+
+    num_correct = 0
+    for num, (question, alternatives) in enumerate(questions, start=1):
+        print(f"\nQuestion {num}:")
+        num_correct += ask_question(question, alternatives)
+
+    print(f"\n You got {num_correct} correct out of {num} questions")
+
+
+if __name__ == "__main__":
+    run_quiz()
