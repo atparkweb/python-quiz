@@ -13,24 +13,9 @@ answers = ["3.11"]
 alternatives = ["3.9", "3.10", "3.12"] 
 
 [[questions]]
-question = "What's the official name of the := operator"
-answers = ["Assignment expression"]
-alternatives = ["Named expression", "Walrus operator", "Colon equals operator"]
-
-[[questions]]
-question = "When was the first known use of the word 'quiz'"
-answers = ["1781"]
-alternatives = ["1771", "1871", "1881"]
-
-[[questions]]
 question = "Which built-in function can get information from the user"
 answers = ["input"]
 alternatives = ["get", "print", "write"]
-
-[[questions]]
-question = "What is the name of the package manager for Python"
-answers = ["pip"]
-alternatives = ["npm", "pypack", "pacman"]
 
 [[questions]]
 question = "What's the name of the list-like data structure in TOML"
