@@ -1,4 +1,7 @@
-[[questions]]
+[python]
+label = "Python"
+
+[[python.questions]]
 question = "When does __name__ == '__main__' equal True in a Python file"
 answers = ["When the file is run as a script"]
 alternatives = [
@@ -8,31 +11,31 @@ alternatives = [
 ]
 hint = "If the file name is not valid, it would produce an error."
 
-[[questions]]
+[[python.questions]]
 question = "Which version of Python is the first with TOML support built in"
 answers = ["3.11"]
 alternatives = ["3.9", "3.10", "3.12"] 
 hint = "TOML support is a relatively recent addition."
 
-[[questions]]
+[[python.questions]]
 question = "Which built-in function can get information from the user"
 answers = ["input"]
 alternatives = ["get", "print", "write"]
 hint = "\"print\" and \"write\" are output methods."
 
-[[questions]]
+[[python.questions]]
 question = "What's the name of the list-like data structure in TOML"
 answers = ["Array"]
 alternatives = ["List", "Sequence", "Set"]
 hint = "It's not \"List\". Lists are python data structures."
 
-[[questions]]
+[[python.questions]]
 question = "How can you run a Python script named quiz.py"
 answers = ["python quiz.py", "python -m quiz"]
 alternatives = ["python quiz", "python -m quiz.py"]
 hint = "One option uses the filename, and the other uses the module name."
 
-[[questions]]
+[[python.questions]]
 question = "What's a PEP"
 answers = ["A Python Enhancement Proposal"]
 alternatives = [
@@ -48,7 +51,7 @@ explanation = """
     document design decisions made about the language.
 """
 
-[[questions]]
+[[python.questions]]
 question = "How can you add a docstring to a function"
 answers = [
     "By writing a string literal as the first statement in the function",
@@ -68,3 +71,23 @@ explanation = """
     There is no built-in @docstring decorator. Many functions naturally return
     strings. Such a feature can therefore not be used for docstrings.
 """
+
+[prefectures]
+label = "Prefectures"
+
+[[prefectures.questions]]
+question = "In which prefecture is the city of Hakodate located in"
+answers = ["Hokkaido"]
+hint = "It's north of Tokyo"
+alternatives = ["Aomori", "Saga", "Shiga"]
+explanation = """
+    Hakodate is a city on the southern isthmus of Hokkaido. It is famous for its
+    seafood market, and beautiful night views from Mount Hakodate.
+    It was established as port open to foreign trade in 1854.
+"""
+
+[[prefectures.questions]]
+question = "Which prefecture is famous for sweet potato shochu"
+answers = ["Kagoshima"]
+hint = "It is located in Kyuushu"
+alternatives = ["Nagasaki", "Miyagi", "Yamaguchi"]
