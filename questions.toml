@@ -6,23 +6,44 @@ alternatives = [
     "When the file has a valid name",
     "When the file only has one function",
 ]
+hint = "If the file name is not valid, it would produce an error."
 
 [[questions]]
 question = "Which version of Python is the first with TOML support built in"
 answers = ["3.11"]
 alternatives = ["3.9", "3.10", "3.12"] 
+hint = "TOML support is a relatively recent addition."
 
 [[questions]]
 question = "Which built-in function can get information from the user"
 answers = ["input"]
 alternatives = ["get", "print", "write"]
+hint = "\"print\" and \"write\" are output methods."
 
 [[questions]]
 question = "What's the name of the list-like data structure in TOML"
 answers = ["Array"]
 alternatives = ["List", "Sequence", "Set"]
+hint = "It's not \"List\". Lists are python data structures."
 
 [[questions]]
 question = "How can you run a Python script named quiz.py"
 answers = ["python quiz.py", "python -m quiz"]
 alternatives = ["python quiz", "python -m quiz.py"]
+hint = "One option uses the filename, and the other uses the module name."
+
+[[questions]]
+question = "What's a PEP"
+answers = ["A Python Enhancement Proposal"]
+alternatives = [
+    "A Pretty Exciting Policy",
+    "A Preciously Evolved Python",
+    "A Potentially Epic Prize",
+    ]
+hint = "PEPs are used to evolve Python."
+explanation = """
+    Python Enhancement Proposals (PEPs) are design documents that provide
+    information to the Python community. PEPs are used to propose new features
+    for the Python language, to collect community input on an issue, and to
+    document design decisions made about the language.
+"""
